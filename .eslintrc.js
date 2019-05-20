@@ -1,24 +1,70 @@
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  extends:  [
-    'plugin:@typescript-eslint/recommended',  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    'prettier/@typescript-eslint',  // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    'plugin:prettier/recommended',  // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  extends: [
+    'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'airbnb-typescript',
+    'plugin:react/recommended',
   ],
+  env: {
+    node: true,
+    browser: true,
+    es6: true,
+    jest: true,
+  },
+  globals: {
+    document: true,
+    window: true,
+  },
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: "module", // Allows for the use of imports
+    sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
-    }
+      jsx: true, // Allows for the parsing of JSX
+    },
   },
   rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      {
+        allowTypedFunctionExpressions: true,
+      },
+    ],
+    'import/no-dynamic-require': 0,
+    'import/prefer-default-export': 0,
+    'global-require': 0,
+    'no-plusplus': [
+      2,
+      {
+        allowForLoopAfterthoughts: true,
+      },
+    ],
+    'no-unused-vars': [
+      2,
+      {
+        args: 'none',
+      },
+    ],
+    'no-use-before-define': 0,
+    'no-useless-concat': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        singleQuote: true,
+        trailingComma: 'all',
+      },
+    ],
+    'react/destructuring-assignment': 0,
+    'react/display-name': 0,
+    'react/forbid-prop-types': 0,
+    'react/jsx-filename-extension': 0,
+    'react/prefer-stateless-function': 0,
   },
   settings: {
     react: {
-      version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
-    }
-  }
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+      allowTypedFunctionExpressions: true,
+    },
+  },
 };
