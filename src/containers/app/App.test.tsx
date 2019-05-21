@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactTestUtils from 'react-addons-test-utils';
 import App from './App';
 
-it('renders without crashing', (): void => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<App />', (): void => {
+  it('should render and match the snapshot', (): void => {
+    const renderer = ReactTestUtils.createRenderer();
+    expect(renderer.render(<App />)).toMatchSnapshot();
+  });
 });
