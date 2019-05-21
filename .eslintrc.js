@@ -7,6 +7,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:react/recommended',
   ],
+  plugins: ['@typescript-eslint', 'react-hooks'],
   env: {
     node: true,
     browser: true,
@@ -19,12 +20,15 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    useJSXTextNode: true,
     sourceType: 'module', // Allows for the use of imports
     ecmaFeatures: {
       jsx: true, // Allows for the parsing of JSX
     },
   },
   rules: {
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {
