@@ -145,6 +145,6 @@
     }
   },
   "lint-staged": {
-    "*.tsx": ["./node_modules/.bin/eslint — fix", "git add"]
+    "*.tsx": ["./node_modules/.bin/eslint —-fix", "git add"]
   }
 }
