@@ -3,16 +3,17 @@ module.exports = {
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.{js,jsx,ts,tsx}',
   ],
+  resolver: 'jest-pnp-resolver',
   coveragePathIgnorePatterns: [
     'src/serviceWorkers.ts',
     'src/react-app-env.d.ts',
     'src/index.tsx',
+    'src/**/*.d.ts',
   ],
   coverageDirectory: '<rootDir>/coverage/',
-  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   modulePaths: ['node_modules', 'src'],
   moduleDirectories: ['node_modules', 'src'],
-  setupFiles: ['./enzyme.setup.js'],
+  setupFiles: ['react-app-polyfill/jsdom', './enzyme.setup.js'],
   coverageThreshold: {
     global: {
       statements: 80,
@@ -25,12 +26,36 @@ module.exports = {
     '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
     '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}',
   ],
+  testURL: 'http://localhost',
   testEnvironment: 'jsdom',
-  moduleNameMapper: {
-    '^react(.*)$': `node_modules/react$1`,
-    '.*\\.(css|less|styl|scss|sass)$': '<rootDir>/scripts/mocks/cssModule.js',
-    '.*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/scripts/mocks/image.js',
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
+    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)':
+      '<rootDir>/config/jest/fileTransform.js',
   },
-  snapshotSerializers: [],
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+  moduleNameMapper: {
+    '^react-native$': 'react-native-web',
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+  },
+  moduleFileExtensions: [
+    'web.js',
+    'js',
+    'web.ts',
+    'ts',
+    'web.tsx',
+    'tsx',
+    'json',
+    'web.jsx',
+    'jsx',
+    'node',
+  ],
+  watchPlugins: [
+    './node_modules/jest-watch-typeahead/filename.js',
+    './node_modules/jest-watch-typeahead/testname.js',
+  ],
 };

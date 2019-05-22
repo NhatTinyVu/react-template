@@ -1,10 +1,8 @@
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
-import App from './App';
+import renderer from 'react-test-renderer';
+import App from '.';
 
-describe('<App />', (): void => {
-  it('should render and match the snapshot', (): void => {
-    const renderer = ReactTestUtils.createRenderer();
-    expect(renderer.render(<App />)).toMatchSnapshot();
-  });
+it('renders correctly', (): void => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
