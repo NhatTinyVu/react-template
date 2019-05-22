@@ -2,20 +2,20 @@
 
 #### Install dependencies
 
-    Yarn
+    yarn
 
 #### Start localhost:3000
 
-    Yarn start
+    yarn start
 
 #### Test
 
-    Yarn test --coverage -u
+    yarn test --coverage -u
 
 
 #### Build
 
-    Yarn build
+    yarn build
 
 #### Learn More
 
