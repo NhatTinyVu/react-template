@@ -1,6 +1,4 @@
-####Tools
-
-[Spectacle: Window management](https://www.spectacleapp.com/)
+#### Tools
 
 [Visual Code](https://code.visualstudio.com/)
 
@@ -39,8 +37,6 @@ Install node (can downgrade or upgrade)
 #### Install java
 
     brew cask install java
-
-Some command:
 
 Get the <Java SE 8 Path> by excute: 
 
