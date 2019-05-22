@@ -8,7 +8,9 @@
     "@types/jest": "24.0.13",
     "@types/node": "12.0.2",
     "@types/react": "16.8.17",
+    "@types/react-addons-test-utils": "^0.14.24",
     "@types/react-dom": "16.8.4",
+    "@types/react-test-renderer": "^16.8.1",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "babel-core": "7.0.0-bridge.0",
@@ -42,9 +44,12 @@
     "husky": "^2.3.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
+    "jest-mock": "^24.8.0",
     "jest-pnp-resolver": "1.0.2",
     "jest-resolve": "23.6.0",
+    "jest-util": "^24.8.0",
     "jest-watch-typeahead": "^0.2.1",
+    "jsdom": "^15.1.0",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
@@ -54,9 +59,11 @@
     "postcss-safe-parser": "4.0.1",
     "prettier": "^1.17.1",
     "react": "^16.8.6",
+    "react-addons-test-utils": "^15.6.2",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
@@ -86,51 +93,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "resolver": "jest-pnp-resolver",
-    "setupFiles": [
-      "react-app-polyfill/jsdom"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
-    ],
-    "testEnvironment": "jsdom",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "web.ts",
-      "ts",
-      "web.tsx",
-      "tsx",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ],
-    "watchPlugins": [
-      "./node_modules/jest-watch-typeahead/filename.js",
-      "./node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
