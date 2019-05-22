@@ -1,14 +1,12 @@
 module.exports = {
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
-    '!src/**/*.{js,jsx,ts,tsx}',
   ],
   resolver: 'jest-pnp-resolver',
   coveragePathIgnorePatterns: [
-    'src/serviceWorkers.ts',
+    'src/serviceWorker.ts',
     'src/react-app-env.d.ts',
     'src/index.tsx',
-    'src/**/*.d.ts',
   ],
   coverageDirectory: '<rootDir>/coverage/',
   modulePaths: ['node_modules', 'src'],
