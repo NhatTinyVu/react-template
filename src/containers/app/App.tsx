@@ -1,21 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Layout } from 'antd';
+import Logo from './logo';
+import NavBar from './navbar';
+import Sider from './sider';
+import Pages from './pages';
+import Footer from './footer';
+import styles from './App.less';
 
-const App: React.FC<{}> = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+const { Header, Content } = Layout;
+
+const App: React.FC = () => (
+  <Router>
+    <Layout className={styles.layout}>
+      <Header>
+        <Logo />
+        <NavBar />
+      </Header>
+      <Content className={styles.content}>
+        <Layout className={styles.page}>
+          <Sider />
+          <Layout>
+            <Pages />
+            <Footer />
+          </Layout>
+        </Layout>
+      </Content>
+    </Layout>
+  </Router>
 );
 
 export default App;

@@ -33,9 +33,12 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {
+        allowExpressions: true,
         allowTypedFunctionExpressions: true,
       },
     ],
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'global-require': 0,
@@ -49,6 +52,7 @@ module.exports = {
       2,
       {
         args: 'none',
+        ignoreRestSiblings: true,
       },
     ],
     'no-use-before-define': 0,
@@ -65,11 +69,18 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 0,
+    'react/button-has-type': 0,
   },
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
       allowTypedFunctionExpressions: true,
+    },
+    'import/resolver': {
+      alias: {
+        map: [['src', './src'], ['src/*', './src/*']],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      },
     },
   },
 };

@@ -7,6 +7,8 @@ module.exports = {
     'src/serviceWorker.ts',
     'src/react-app-env.d.ts',
     'src/index.tsx',
+    'constants.ts',
+    'constants.js',
   ],
   coverageDirectory: '<rootDir>/coverage/',
   modulePaths: ['node_modules', 'src'],
@@ -28,17 +30,15 @@ module.exports = {
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-    '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)':
+    '^(?!.*\\.(js|jsx|ts|tsx|json)$)':
       '<rootDir>/config/jest/fileTransform.js',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
-    '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleNameMapper: {
     '^react-native$': 'react-native-web',
-    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.(css|less|sass|scss)$': 'identity-obj-proxy',
   },
   moduleFileExtensions: [
     'web.js',

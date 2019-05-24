@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Sider
+  breakpoint="md"
+  collapsedWidth="0"
+>
+  <Menu
+    defaultSelectedKeys={
+      Array [
+        "/react-hooks",
+      ]
+    }
+    mode="inline"
+    selectedKeys={
+      Array [
+        "/react-hooks",
+      ]
+    }
+    theme="dark"
+  >
+    <SubMenu
+      key="/react-hooks"
+      title={
+        <Item
+          title="React hooks"
+          url="/react-hooks"
+        />
+      }
+    >
+      <MenuItem
+        key="/react-hooks/use-state"
+      >
+        <Link
+          to="/react-hooks/use-state"
+        >
+          useState
+        </Link>
+      </MenuItem>
+    </SubMenu>
+  </Menu>
+</Sider>
+`;
+
+exports[`renders correctly 2`] = `
+<span>
+  <Icon
+    type="unordered-list"
+  />
+  <span>
+    <Link
+      to="url"
+    >
+      title
+    </Link>
+  </span>
+</span>
+`;
