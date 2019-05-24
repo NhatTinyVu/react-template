@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div
-  className="App"
->
-  <header
-    className="App-header"
+<BrowserRouter>
+  <Adapter
+    className="layout"
   >
-    <img
-      alt="logo"
-      className="App-logo"
-      src="logo.svg"
-    />
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
+    <Adapter>
+      <Logo />
+      <NavBar />
+    </Adapter>
+    <Adapter
+      className="content"
     >
-      Learn React
-    </a>
-  </header>
-</div>
+      <Adapter
+        className="page"
+      >
+        <Sider />
+        <NavBar />
+        <Footer />
+      </Adapter>
+    </Adapter>
+  </Adapter>
+</BrowserRouter>
 `;

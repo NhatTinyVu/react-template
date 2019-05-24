@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Adapter
+  className="footer"
+>
+  <a
+    href="https://github.com/NhatTinyVu/react-template"
+  >
+    React Template
+  </a>
+  demo
+  <button
+    onClick={[Function]}
+  >
+    Demo
+  </button>
+</Adapter>
+`;

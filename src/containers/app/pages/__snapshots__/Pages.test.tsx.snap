@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Suspense
+  fallback={<Loading />}
+>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      key="/react-hooks"
+      path="/react-hooks"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      key="/react-hooks/use-state"
+      path="/react-hooks/use-state"
+    />
+  </Switch>
+</Suspense>
+`;

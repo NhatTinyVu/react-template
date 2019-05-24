@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Sider>
+  <Menu
+    defaultSelectedKeys={
+      Array [
+        "/",
+      ]
+    }
+    mode="inline"
+  >
+    <SubMenu
+      key="/"
+      title={
+        <Link
+          to="/"
+        >
+          React hooks
+        </Link>
+      }
+    />
+  </Menu>
+</Sider>
+`;
