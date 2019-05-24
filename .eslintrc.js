@@ -38,6 +38,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/interface-name-prefix': 0,
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'global-require': 0,
