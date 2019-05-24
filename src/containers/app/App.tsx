@@ -20,8 +20,10 @@ const App: React.FC = () => (
       <Content className={styles.content}>
         <Layout className={styles.page}>
           <Sider />
-          <Pages />
-          <Footer />
+          <Layout>
+            <Pages />
+            <Footer />
+          </Layout>
         </Layout>
       </Content>
     </Layout>

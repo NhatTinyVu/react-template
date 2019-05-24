@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import useRouter from 'use-react-router';
 import { Menu } from 'antd';
-import { get } from 'lodash';
+import { get, find } from 'lodash';
 import { routes } from '../constants';
 import styles from './NavBar.less';
 
@@ -14,7 +14,8 @@ const NavBar: React.FC = () => {
   }: RouteComponentProps = useRouter();
 
   const selectedKey = get(
-    routes.find(({ url }) => pathname.includes(url)),
+    routes.find(({ url }) => pathname === url) ||
+      find(routes, { childrens: [{ url: pathname }] }),
     'url',
     initialKey,
   );

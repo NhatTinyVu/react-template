@@ -69,12 +69,18 @@ module.exports = {
     'react/forbid-prop-types': 0,
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 0,
-    'react/button-has-type': 0
+    'react/button-has-type': 0,
   },
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
       allowTypedFunctionExpressions: true,
+    },
+    'import/resolver': {
+      alias: {
+        map: [['src', './src'], ['src/*', './src/*']],
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      },
     },
   },
 };

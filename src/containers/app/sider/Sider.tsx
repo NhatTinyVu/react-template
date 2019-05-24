@@ -2,10 +2,24 @@ import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import useRouter from 'use-react-router';
 import { get } from 'lodash';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 import { routes, Routes } from '../constants';
 
 const initialKey = get(routes, '[0].url', '');
+
+interface ItemProps {
+  title: string;
+  url: string;
+}
+
+export const Item: React.FC<ItemProps> = ({ title, url }: ItemProps) => (
+  <span>
+    <Icon type="unordered-list" />
+    <span>
+      <Link to={url}>{title}</Link>
+    </span>
+  </span>
+);
 
 const Sider: React.FC = () => {
   const {
@@ -19,7 +33,7 @@ const Sider: React.FC = () => {
   );
 
   return (
-    <Layout.Sider>
+    <Layout.Sider breakpoint="md" collapsedWidth="0">
       <Menu
         mode="inline"
         theme="dark"
@@ -27,7 +41,7 @@ const Sider: React.FC = () => {
         selectedKeys={[selectedKey]}
       >
         {routes.map(({ title, url, childrens }) => (
-          <Menu.SubMenu key={url} title={<Link to={url}>{title}</Link>}>
+          <Menu.SubMenu key={url} title={<Item title={title} url={url} />}>
             {childrens &&
               childrens.map(route => (
                 <Menu.Item key={route.url}>

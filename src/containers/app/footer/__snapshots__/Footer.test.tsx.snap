@@ -7,7 +7,10 @@ exports[`renders correctly 1`] = `
   <a
     href="https://github.com/NhatTinyVu/react-template"
   >
-    React Template
+    <Icon
+      type="github"
+    />
+     Github
   </a>
 </Adapter>
 `;

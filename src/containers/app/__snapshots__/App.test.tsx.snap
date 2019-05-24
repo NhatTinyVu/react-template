@@ -16,8 +16,10 @@ exports[`renders correctly 1`] = `
         className="page"
       >
         <Sider />
-        <NavBar />
-        <Footer />
+        <Adapter>
+          <NavBar />
+          <Footer />
+        </Adapter>
       </Adapter>
     </Adapter>
   </Adapter>
