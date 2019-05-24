@@ -5,21 +5,37 @@ exports[`renders correctly 1`] = `
   <Menu
     defaultSelectedKeys={
       Array [
-        "/",
+        "/react-hooks",
       ]
     }
     mode="inline"
+    selectedKeys={
+      Array [
+        "/react-hooks",
+      ]
+    }
+    theme="dark"
   >
     <SubMenu
-      key="/"
+      key="/react-hooks"
       title={
         <Link
-          to="/"
+          to="/react-hooks"
         >
           React hooks
         </Link>
       }
-    />
+    >
+      <MenuItem
+        key="/react-hooks/use-state"
+      >
+        <Link
+          to="/react-hooks/use-state"
+        >
+          useState
+        </Link>
+      </MenuItem>
+    </SubMenu>
   </Menu>
 </Sider>
 `;
