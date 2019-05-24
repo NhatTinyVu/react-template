@@ -1,30 +1,38 @@
-import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import styles from './App.scss';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Layout, Menu } from 'antd';
+import Loading from '../../components/loading';
+import styles from './App.less';
 
 const { Header, Footer, Content } = Layout;
 
 const App: React.FC = () => (
   <Layout className={styles.layout}>
     <Header>
+      <div className={styles.logo}>
+        <img src={`${process.env.PUBLIC_URL}/logo.svg`} alt="logo" />
+      </div>
       <Menu className={styles.navbar} theme="dark" mode="horizontal">
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
+        <Menu.Item key="1">React Hooks</Menu.Item>
       </Menu>
     </Header>
-    <Content style={{ padding: '0 50px' }}>
-      <Breadcrumb style={{ margin: '16px 0' }}>
-        <Breadcrumb.Item>Home</Breadcrumb.Item>
-        <Breadcrumb.Item>List</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
-      </Breadcrumb>
-      <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
-        Content
-      </div>
+    <Content className={styles.content}>
+      <Layout className={styles.page}>
+        <Router>
+          <Suspense fallback={<Loading />}>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                component={React.lazy(() => import('../../components/loading'))}
+              />
+            </Switch>
+          </Suspense>
+        </Router>
+      </Layout>
     </Content>
-    <Footer style={{ textAlign: 'center' }}>
-      Ant Design ©2018 Created by Ant UED
+    <Footer className="text-center">
+      <a href="https://github.com/NhatTinyVu/react-template">React Template</a>
     </Footer>
   </Layout>
 );

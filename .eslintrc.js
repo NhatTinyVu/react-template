@@ -33,9 +33,11 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {
+        allowExpressions: true,
         allowTypedFunctionExpressions: true,
       },
     ],
+    '@typescript-eslint/no-explicit-any': 0,
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'global-require': 0,
@@ -49,6 +51,7 @@ module.exports = {
       2,
       {
         args: 'none',
+        ignoreRestSiblings: true,
       },
     ],
     'no-use-before-define': 0,
