@@ -12,7 +12,7 @@ const NavBar: React.FC = () => (
         <Route exact path="/" component={initialRoute.component} />
       )}
       {Routes.map(
-        ({ url, component, childrens }): React.ReactNode => (
+        ({ url, component }): React.ReactNode => (
           <Route exact key={url} path={url} component={component} />
         ),
       )}
