@@ -4,7 +4,7 @@ export interface IRoutes {
   title: string;
   url: string;
   component: React.ComponentType;
-  childrens?: IRoutes[];
+  children?: IRoutes[];
 }
 
 export const routes: IRoutes[] = [
@@ -12,7 +12,7 @@ export const routes: IRoutes[] = [
     title: 'React hooks',
     url: '/react-hooks',
     component: React.lazy(() => import('src/containers/react-hooks')),
-    childrens: [
+    children: [
       {
         title: 'useState',
         url: '/react-hooks/use-state',
@@ -25,6 +25,6 @@ export const routes: IRoutes[] = [
 ];
 
 export const Routes: IRoutes[] = routes.reduce<IRoutes[]>(
-  (value, route) => [...value, route, ...((route && route.childrens) || [])],
+  (value, route) => [...value, route, ...((route && route.children) || [])],
   [],
 );

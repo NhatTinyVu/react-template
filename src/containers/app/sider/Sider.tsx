@@ -40,10 +40,10 @@ const Sider: React.FC = () => {
         defaultSelectedKeys={[initialKey]}
         selectedKeys={[selectedKey]}
       >
-        {routes.map(({ title, url, childrens }) => (
+        {routes.map(({ title, url, children }) => (
           <Menu.SubMenu key={url} title={<Item title={title} url={url} />}>
-            {childrens &&
-              childrens.map(route => (
+            {children &&
+              children.map(route => (
                 <Menu.Item key={route.url}>
                   <Link to={route.url}>{route.title}</Link>
                 </Menu.Item>
