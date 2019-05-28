@@ -1,18 +1,18 @@
 import React from 'react';
 
-export interface IRoutes {
+export interface Route {
   title: string;
   url: string;
   component: React.ComponentType;
-  childrens?: IRoutes[];
+  children?: Route[];
 }
 
-export const routes: IRoutes[] = [
+export const routes: Route[] = [
   {
     title: 'React hooks',
     url: '/react-hooks',
     component: React.lazy(() => import('src/containers/react-hooks')),
-    childrens: [
+    children: [
       {
         title: 'useState',
         url: '/react-hooks/use-state',
@@ -24,7 +24,7 @@ export const routes: IRoutes[] = [
   },
 ];
 
-export const Routes: IRoutes[] = routes.reduce<IRoutes[]>(
-  (value, route) => [...value, route, ...((route && route.childrens) || [])],
+export const allRoutes: Route[] = routes.reduce<Route[]>(
+  (value, route) => [...value, route, ...((route && route.children) || [])],
   [],
 );

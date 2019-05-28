@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
 
   const selectedKey = get(
     routes.find(({ url }) => pathname === url) ||
-      find(routes, { childrens: [{ url: pathname }] }),
+      find(routes, { children: [{ pathname }] }),
     'url',
     initialKey,
   );

@@ -3,7 +3,7 @@ import { Link, RouteComponentProps } from 'react-router-dom';
 import useRouter from 'use-react-router';
 import { get } from 'lodash';
 import { Layout, Menu, Icon } from 'antd';
-import { routes, Routes } from '../constants';
+import { routes, allRoutes } from '../constants';
 
 const initialKey = get(routes, '[0].url', '');
 
@@ -27,7 +27,7 @@ const Sider: React.FC = () => {
   }: RouteComponentProps = useRouter();
 
   const selectedKey = get(
-    Routes.find(({ url }) => url === pathname),
+    allRoutes.find(({ url }) => url === pathname),
     'url',
     initialKey,
   );
@@ -40,10 +40,10 @@ const Sider: React.FC = () => {
         defaultSelectedKeys={[initialKey]}
         selectedKeys={[selectedKey]}
       >
-        {routes.map(({ title, url, childrens }) => (
+        {routes.map(({ title, url, children }) => (
           <Menu.SubMenu key={url} title={<Item title={title} url={url} />}>
-            {childrens &&
-              childrens.map(route => (
+            {children &&
+              children.map(route => (
                 <Menu.Item key={route.url}>
                   <Link to={route.url}>{route.title}</Link>
                 </Menu.Item>
