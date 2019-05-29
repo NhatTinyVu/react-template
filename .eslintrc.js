@@ -39,6 +39,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/no-use-before-define': 0,
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'global-require': 0,
@@ -70,6 +71,7 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/prefer-stateless-function': 0,
     'react/button-has-type': 0,
+    'react/jsx-one-expression-per-line': [true, { allow: 'literal' }],
   },
   settings: {
     react: {
