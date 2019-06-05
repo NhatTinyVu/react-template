@@ -9,16 +9,16 @@ const mouseMoveEvent = new Event('mousemove', {
 let mockHandler: EventHandler = (event: any): void => {};
 
 const mockWindow = {
-  addEventListener: (eventName, handler) => {
+  addEventListener: (eventName: string, handler: EventHandler) => {
     mockHandler = handler;
   },
-  dispatchEvent: event => mockHandler(event),
+  dispatchEvent: (event: any) => mockHandler(event),
 };
 
 it('useEventListener', () => {
   const spyAddEventListener = jest
     .spyOn(window, 'addEventListener')
-    .mockImplementation(mockWindow.addEventListener);
+    .mockImplementation(mockWindow.addEventListener as any);
   const spyRemoveEventListener = jest.spyOn(window, 'removeEventListener');
 
   const handler = jest.fn();

@@ -94,7 +94,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "test:eslint": "node node_modules/eslint/bin/eslint.js src --ext .tsx,.ts,.js,.jsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -118,7 +119,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./node_modules/eslint/bin/eslint.js src --ext .tsx,.ts,.js,.jsx"
+      "pre-commit": "yarn test:eslint"
     }
   }
 }
