@@ -40,6 +40,13 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        args: 'none',
+        ignoreRestSiblings: true,
+      },
+    ],
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'global-require': 0,
