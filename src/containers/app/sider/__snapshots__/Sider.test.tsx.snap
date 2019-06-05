@@ -29,12 +29,12 @@ exports[`renders correctly 1`] = `
       }
     >
       <MenuItem
-        key="/react-hooks/use-state"
+        key="/react-hooks/use-event-listener"
       >
         <Link
-          to="/react-hooks/use-state"
+          to="/react-hooks/use-event-listener"
         >
-          useState
+          useEventListener
         </Link>
       </MenuItem>
     </SubMenu>
