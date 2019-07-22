@@ -46,6 +46,19 @@ exports[`renders correctly 1`] = `
         key="/react-hooks/use-event-listener"
         path="/react-hooks/use-event-listener"
       />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        key="/react-hooks/use-why-did-you-update"
+        path="/react-hooks/use-why-did-you-update"
+      />
     </Switch>
   </Suspense>
 </Adapter>

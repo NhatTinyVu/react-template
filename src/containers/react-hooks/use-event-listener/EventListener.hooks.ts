@@ -1,10 +1,10 @@
 import { useRef, useEffect } from 'react';
-import { EventHandler } from './UseEventListener.types';
+import { EventHandler, UseEventHandlerParams } from './types';
 
-export const useEventListener = (
-  eventName: string,
-  handler: EventHandler,
-): void => {
+export const useEventListener = ({
+  eventName,
+  handler,
+}: UseEventHandlerParams): void => {
   const ref = useRef<EventHandler>();
 
   useEffect(() => {

@@ -1,16 +1,15 @@
 import React, { useState, useCallback } from 'react';
-import { useEventListener } from './UseEventListener.hooks';
-import { Coords, CoordsHandler } from './UseEventListener.types';
+import { useEventListener } from './EventListener.hooks';
+import { Coords, CoordsHandler } from './types';
 
 const UseState: React.FC = () => {
   const [coords, setCoords]: [Coords, (coords: Coords) => void] = useState({
     x: 0,
     y: 0,
   });
-
   const handler: CoordsHandler = useCallback(setCoords, []);
 
-  useEventListener('mousemove', handler);
+  useEventListener({ eventName: 'mousemove', handler });
 
   return (
     <div>

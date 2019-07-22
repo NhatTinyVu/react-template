@@ -10,3 +10,8 @@ export interface EventHandler {
 export interface CoordsHandler {
   (coords: Coords): void;
 }
+
+export interface UseEventHandlerParams {
+  eventName: string;
+  handler: EventHandler;
+}

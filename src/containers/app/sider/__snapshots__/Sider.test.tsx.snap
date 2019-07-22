@@ -37,6 +37,15 @@ exports[`renders correctly 1`] = `
           useEventListener
         </Link>
       </MenuItem>
+      <MenuItem
+        key="/react-hooks/use-why-did-you-update"
+      >
+        <Link
+          to="/react-hooks/use-why-did-you-update"
+        >
+          useWhyDidYouUpdate
+        </Link>
+      </MenuItem>
     </SubMenu>
   </Menu>
 </Sider>
