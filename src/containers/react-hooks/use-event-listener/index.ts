@@ -1,3 +1,1 @@
-import EventListener from './EventListener';
-
-export default EventListener;
+export { default } from './EventListener';

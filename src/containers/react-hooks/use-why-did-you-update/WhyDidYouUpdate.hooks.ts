@@ -1,30 +1,18 @@
 import { useEffect, useRef } from 'react';
 import { message } from 'antd';
+import { getDiffValues } from './WhyDidYouUpdate.utils';
 
 export const useWhyDidYouUpdate = (props: any): void => {
   const previousProps = useRef<any>();
 
   useEffect(() => {
     if (previousProps.current) {
-      const allKeys = Object.keys({
-        ...previousProps.current,
-        ...props,
-      });
-      const changesObj: any = {};
-      allKeys.forEach(key => {
-        if (previousProps.current[key] !== props[key]) {
-          changesObj[key] = {
-            from: previousProps.current[key],
-            to: props[key],
-          };
-        }
-      });
+      const diffValues = getDiffValues(previousProps.current, props);
 
-      if (Object.keys(changesObj).length) {
-        message.info(`[why-did-you-update] ${JSON.stringify(changesObj)}`);
+      if (Object.keys(diffValues).length) {
+        message.info(`[why-did-you-update] ${JSON.stringify(diffValues)}`);
       }
     }
-
     previousProps.current = props;
   });
 };

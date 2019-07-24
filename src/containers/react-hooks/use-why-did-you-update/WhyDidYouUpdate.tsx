@@ -2,14 +2,11 @@
 import React, { useState } from 'react';
 import Counter from './Counter';
 
-export default () => {
+const WhyDidYouUpdate: React.FC = () => {
   const [count, setCount] = useState(0);
   const [userId, setUserId] = useState(0);
 
-  const counterStyle = {
-    fontSize: '3rem',
-    color: 'red',
-  };
+  const counterStyle = { color: 'red' };
 
   return (
     <div>
@@ -24,3 +21,5 @@ export default () => {
     </div>
   );
 }
+
+export default WhyDidYouUpdate;

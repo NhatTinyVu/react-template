@@ -1,3 +1,1 @@
-import UseWhyDidYouUpdate from './WhyDidYouUpdate';
-
-export default UseWhyDidYouUpdate;
+export { default } from './WhyDidYouUpdate';
