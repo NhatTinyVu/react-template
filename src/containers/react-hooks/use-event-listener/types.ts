@@ -7,11 +7,7 @@ export interface EventHandler {
   (event: any): void;
 }
 
-export interface CoordsHandler {
-  (coords: Coords): void;
-}
-
-export interface UseEventHandlerParams {
+export interface EventHandlerParams {
   eventName: string;
   handler: EventHandler;
 }

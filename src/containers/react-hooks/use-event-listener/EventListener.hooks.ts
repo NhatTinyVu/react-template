@@ -1,10 +1,16 @@
-import { useRef, useEffect } from 'react';
-import { EventHandler, UseEventHandlerParams } from './types';
+import {
+  useRef,
+  Dispatch,
+  useEffect,
+  useCallback,
+  SetStateAction,
+} from 'react';
+import { EventHandler, EventHandlerParams, Coords } from './types';
 
 export const useEventListener = ({
   eventName,
   handler,
-}: UseEventHandlerParams): void => {
+}: EventHandlerParams): void => {
   const ref = useRef<EventHandler>();
 
   useEffect(() => {
@@ -19,3 +25,9 @@ export const useEventListener = ({
     return () => window.removeEventListener(eventName, eventListener);
   }, [eventName]);
 };
+
+export const useChangeCoordsHandler = ({
+  setCoords,
+}: {
+  setCoords: Dispatch<SetStateAction<Coords>>;
+}): Dispatch<SetStateAction<Coords>> => useCallback(setCoords, [setCoords]);
