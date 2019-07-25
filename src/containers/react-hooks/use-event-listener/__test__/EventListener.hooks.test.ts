@@ -1,12 +1,20 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { useEventListener } from '../EventListener.hooks';
+import {
+  useEventListener,
+  useChangeCoordsHandler,
+} from '../EventListener.hooks';
 import { EventHandler } from '../types';
 
+const setCoords = jest.fn();
 const mouseMoveEvent = new Event('mousemove', {
   clientX: 100,
   clientY: 200,
 } as any);
 let mockHandler: EventHandler = (event: any): void => {};
+
+beforeEach(() => {
+  setCoords.mockClear();
+});
 
 const mockWindow = {
   addEventListener: (eventName: string, handler: EventHandler) => {
@@ -14,6 +22,7 @@ const mockWindow = {
   },
   dispatchEvent: (event: any) => mockHandler(event),
 };
+
 describe('useEventListener', () => {
   test('works correctly', () => {
     const spyAddEventListener = jest
@@ -32,5 +41,16 @@ describe('useEventListener', () => {
     spyRemoveEventListener.mockReset();
     unmount();
     expect(spyRemoveEventListener).toBeCalled();
+  });
+});
+
+describe('useChangeCoordsHandler', () => {
+  test('works correctly', () => {
+    const {
+      result: { current: handleChangeCoords },
+    } = renderHook(() => useChangeCoordsHandler({ setCoords }));
+    handleChangeCoords({ x: 1, y: 1 });
+
+    expect(setCoords).toBeCalledWith({ x: 1, y: 1 });
   });
 });
