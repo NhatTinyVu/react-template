@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sider renders correctly 1`] = `
+<span>
+  <Icon
+    type="unordered-list"
+  />
+  <span>
+    <Link
+      to="url"
+    >
+      title
+    </Link>
+  </span>
+</span>
+`;
+
+exports[`Sider renders without crashing 1`] = `
+<Sider
+  breakpoint="md"
+  collapsedWidth="0"
+>
+  <Menu
+    defaultSelectedKeys={
+      Array [
+        "/react-hooks",
+      ]
+    }
+    mode="inline"
+    selectedKeys={
+      Array [
+        "/react-hooks",
+      ]
+    }
+    theme="dark"
+  >
+    <SubMenu
+      key="/react-hooks"
+      title={
+        <Item
+          title="React hooks"
+          url="/react-hooks"
+        />
+      }
+    >
+      <MenuItem
+        key="/react-hooks/use-event-listener"
+      >
+        <Link
+          to="/react-hooks/use-event-listener"
+        >
+          useEventListener
+        </Link>
+      </MenuItem>
+      <MenuItem
+        key="/react-hooks/use-why-did-you-update"
+      >
+        <Link
+          to="/react-hooks/use-why-did-you-update"
+        >
+          useWhyDidYouUpdate
+        </Link>
+      </MenuItem>
+    </SubMenu>
+  </Menu>
+</Sider>
+`;

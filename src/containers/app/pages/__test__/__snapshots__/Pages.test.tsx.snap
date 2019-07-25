@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pages renders correctly 1`] = `
+<Adapter
+  className="content"
+>
+  <Suspense
+    fallback={<Loading />}
+  >
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        key="/react-hooks"
+        path="/react-hooks"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        key="/react-hooks/use-event-listener"
+        path="/react-hooks/use-event-listener"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        key="/react-hooks/use-why-did-you-update"
+        path="/react-hooks/use-why-did-you-update"
+      />
+    </Switch>
+  </Suspense>
+</Adapter>
+`;

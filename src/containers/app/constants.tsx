@@ -20,6 +20,13 @@ export const routes: Route[] = [
           import('src/containers/react-hooks/use-event-listener'),
         ),
       },
+      {
+        title: 'useWhyDidYouUpdate',
+        url: '/react-hooks/use-why-did-you-update',
+        component: React.lazy(() =>
+          import('src/containers/react-hooks/use-why-did-you-update'),
+        ),
+      },
     ],
   },
 ];

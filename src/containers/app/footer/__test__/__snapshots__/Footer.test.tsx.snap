@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<Adapter
+  className="footer"
+>
+  <a
+    href="https://github.com/NhatTinyVu/react-template"
+  >
+    <Icon
+      type="github"
+    />
+     Github
+  </a>
+</Adapter>
+`;

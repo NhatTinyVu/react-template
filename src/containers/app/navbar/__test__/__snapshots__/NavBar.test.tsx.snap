@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+<Menu
+  className="navbar"
+  defaultSelectedKeys={
+    Array [
+      "/react-hooks",
+    ]
+  }
+  mode="horizontal"
+  selectedKeys={
+    Array [
+      "/react-hooks",
+    ]
+  }
+  theme="dark"
+>
+  <MenuItem
+    key="/react-hooks"
+  >
+    <Link
+      to="/react-hooks"
+    >
+      React hooks
+    </Link>
+  </MenuItem>
+</Menu>
+`;

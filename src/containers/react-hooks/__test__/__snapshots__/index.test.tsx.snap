@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactHooks renders correctly 1`] = `
+<Adapter
+  className="content-center"
+>
+  <h3
+    className="text-center"
+  >
+    React Hooks Templates
+  </h3>
+  <p>
+    Please select the template
+  </p>
+</Adapter>
+`;
