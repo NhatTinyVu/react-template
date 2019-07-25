@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`EventListener renders correctly 1`] = `
 <div>
   The mouse position is 
   0

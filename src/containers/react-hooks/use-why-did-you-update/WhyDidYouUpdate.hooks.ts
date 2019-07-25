@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { message } from 'antd';
+import { IncrementHandlerParams, ChangeUserHandlerParams } from './types';
 import { getDiffValues } from './WhyDidYouUpdate.utils';
 
-export const useWhyDidYouUpdate = (props: any): void => {
+export const useWhyDidYouUpdate = (props?: any): void => {
   const previousProps = useRef<any>();
 
   useEffect(() => {
@@ -16,3 +17,13 @@ export const useWhyDidYouUpdate = (props: any): void => {
     previousProps.current = props;
   });
 };
+
+export const useIncrementHandler = ({
+  setCount,
+}: IncrementHandlerParams): (() => void) =>
+  useCallback(() => setCount((count: number) => count + 1), [setCount]);
+
+export const useChangeUserHandler = ({
+  setUserId,
+}: ChangeUserHandlerParams): (() => void) =>
+  useCallback(() => setUserId((userId: number) => userId + 1), [setUserId]);
