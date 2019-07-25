@@ -1,8 +1,8 @@
 import { getDiffValues } from '../WhyDidYouUpdate.utils';
 
 describe('getDiffValues', () => {
-  test('returns empty when equal', () => {
-    expect(getDiffValues({ a: 1, b: 2 }, { a: 1, b: 2 })).toEqual({});
+  test('returns empty when firstObject is null', () => {
+    expect(getDiffValues(null, { a: 1, b: 2 })).toEqual({});
   });
 
   test('works correctly', () => {

@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Sider renders correctly 1`] = `
+<span>
+  <Icon
+    type="unordered-list"
+  />
+  <span>
+    <Link
+      to="url"
+    >
+      title
+    </Link>
+  </span>
+</span>
+`;
+
+exports[`Sider renders without crashing 1`] = `
 <Sider
   breakpoint="md"
   collapsedWidth="0"
@@ -49,19 +64,4 @@ exports[`renders correctly 1`] = `
     </SubMenu>
   </Menu>
 </Sider>
-`;
-
-exports[`renders correctly 2`] = `
-<span>
-  <Icon
-    type="unordered-list"
-  />
-  <span>
-    <Link
-      to="url"
-    >
-      title
-    </Link>
-  </span>
-</span>
 `;
