@@ -59,6 +59,19 @@ exports[`Pages renders correctly 1`] = `
         key="/react-hooks/use-why-did-you-update"
         path="/react-hooks/use-why-did-you-update"
       />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.lazy),
+            "_ctor": [Function],
+            "_result": null,
+            "_status": -1,
+          }
+        }
+        exact={true}
+        key="/react-hooks/use-safe-promise"
+        path="/react-hooks/use-safe-promise"
+      />
     </Switch>
   </Suspense>
 </Adapter>

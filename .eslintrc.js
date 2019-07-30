@@ -28,8 +28,7 @@ module.exports = {
     },
   },
   rules: {
-    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
-    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    'react-hooks/rules-of-hooks': 'error',
     '@typescript-eslint/explicit-function-return-type': [
       'error',
       {
@@ -87,8 +86,8 @@ module.exports = {
     },
     'import/resolver': {
       alias: {
-        map: [['src', './src'], ['src/*', './src/*']],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        map: [['src', './src']],
+        extensions: ['.ts', '.tsx', '.js', 'jsx', 'json'],
       },
     },
   },
