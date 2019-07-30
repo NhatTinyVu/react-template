@@ -29,7 +29,7 @@ export const routes: Route[] = [
       },
       {
         title: 'useEffectAsync',
-        url: '/react-hooks/use-safe-promise',
+        url: '/react-hooks/use-effect-async',
         component: React.lazy(() =>
           import('src/containers/react-hooks/use-effect-async'),
         ),
