@@ -27,6 +27,13 @@ export const routes: Route[] = [
           import('src/containers/react-hooks/use-why-did-you-update'),
         ),
       },
+      {
+        title: 'useEffectAsync',
+        url: '/react-hooks/use-effect-async',
+        component: React.lazy(() =>
+          import('src/containers/react-hooks/use-effect-async'),
+        ),
+      },
     ],
   },
 ];

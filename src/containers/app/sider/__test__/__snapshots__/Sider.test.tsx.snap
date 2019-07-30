@@ -61,6 +61,15 @@ exports[`Sider renders without crashing 1`] = `
           useWhyDidYouUpdate
         </Link>
       </MenuItem>
+      <MenuItem
+        key="/react-hooks/use-safe-promise"
+      >
+        <Link
+          to="/react-hooks/use-safe-promise"
+        >
+          useEffectAsync
+        </Link>
+      </MenuItem>
     </SubMenu>
   </Menu>
 </Sider>
