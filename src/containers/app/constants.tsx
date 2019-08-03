@@ -14,6 +14,11 @@ export const routes: Route[] = [
     component: React.lazy(() => import('src/containers/react-hooks')),
     children: [
       {
+        title: 'Demo',
+        url: '/demo',
+        component: React.lazy(() => import('src/containers/demo')),
+      },
+      {
         title: 'useEventListener',
         url: '/react-hooks/use-event-listener',
         component: React.lazy(() =>
